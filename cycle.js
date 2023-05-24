@@ -1,21 +1,21 @@
 // task 1
 // При помощи цикла for выведите чётные числа от 2 до 10.
 
-for(let i = 2; i <= 10; i++){
-    if(i % 2 == 0) {
-        console.log(i);
-    }
+for (let i = 2; i <= 10; i++) {
+  if (i % 2 == 0) {
+    console.log(i);
+  }
 };
 
 // task 2
 // Перепишите код из задания #1, заменив цикл for на while, без изменения поведения цикла.
 
 let j = 2;
-while (j <=10 ) {
-    if (j % 2 == 0){
-        console.log(j);
-    }
-j++;
+while (j <= 10) {
+  if (j % 2 == 0) {
+    console.log(j);
+  }
+  j++;
 };
 
 //task 3
@@ -26,17 +26,16 @@ j++;
 Напишите код, который выводит все простые числа из интервала от 2 до n.
 Для n = 10 результат должен быть 2,3,5,7. */
 
-let i = 2;
-for(; i < 10; i++) {
-    
-    if(){               // простое число
-        console.log(i);
+const n = 10;
+for (let i = 2; i <= n; i++) {
+  for (let j = 2; j <= i; j++) {
+    if (i % j === 0 && j < i) {
+      break;
+    } else if (j === i) {
+      console.log(i);
     }
-    else{
-        continue
-    }
-    
-};
+  }
+}
 
 
 //task 4
@@ -61,8 +60,20 @@ console.log(reversedWord);
 Например, введено число 987560. Наибольшая цифра в нем 9.
  */
 
-let n = 12384;
+/* let n = 12384;
 let n1 = String(n);
 let n2 = n1.split('').map(Number);
 let max = Math.max.apply(null, n2);
-console.log(max);
+console.log(max); */
+
+
+let a = 22345;
+let max = 0;
+let b = a.toString();
+for (let i = 0; i <= b.length - 1; i++) {
+  let num = Number(b[i]);
+  if (max < num) {
+    max = num;
+  }
+}
+console.log("Наибольшая цифра:", max);
